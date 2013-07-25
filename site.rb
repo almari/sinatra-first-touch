@@ -20,14 +20,15 @@ get '/sh' do
  # a.puts
 end
 
-get '/shell/:name' do
-   IO.popen("echo 'Welcome #{params[:name]}'").readlines
-  # IO.popen("ls").readlines
-  # "Hello #{params[:name]}!"
-   #O.popen('#{params[:name]}!').readlines
-end
-
 get '/bash/:name' do |a|
   #a=#{params[:name]}
   IO.popen("sh ./script.sh #{a}").readlines
+end
+
+get '/deploy/' do
+  #a=#{params[:app_name]}
+  puts "hello world...****************************"
+  puts params['app']
+  puts params['env']
+  IO.popen("sh ./script.sh #{params['app']} #{params['env']} #{params['branch']} #{params['dest']}").readlines
 end
