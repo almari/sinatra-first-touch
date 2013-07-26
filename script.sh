@@ -9,13 +9,13 @@
 # $4 --destination to deploy {ec2, local}
 
 #echo -e "\E[31;40m envokedCmd: $1\n"
-echo -e "envokedCmd: $1\n"
+#echo -e "envokedCmd: $1\n"
 
 #change dir to ::: cd <path_2_app_name>
 cd ~/sites/$1
-echo -e "\E[31;40m $(pwd)\n"
+echo -e "\E[32;40m ok entering to $1 directory. i.e,\n $(pwd)"
 
-#pull the latest changes
+#now lets pull the latest changes
 #git pull
 #git checkout -b $3
 
