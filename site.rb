@@ -20,5 +20,7 @@ get '/deploy/' do
   puts "hello world...****************************"
   puts params['app']
   puts params['env']
-  IO.popen("sh ./script.sh #{params['app']} #{params['env']} #{params['branch']} #{params['dest']}").readlines
+  puts params['branch']
+  puts params['deploy_type']
+  IO.popen("sh ./script.sh #{params['app']} #{params['env']} #{params['branch']} #{params['deploy_type']}").readlines
 end

@@ -2,22 +2,19 @@
 
 ##This is simple script to test with the sinatra application
 ## inputs
-# $0 --cmd name
-# $1 --path to app
-# $2 --environment to deploy {devtest, qa, staging}
-# $3 --branch
-# $4 --destination to deploy {ec2, local}
+## $0 --cmd name
+## $1 --path to app
+## $2 --environment to deploy {devtest, qa, staging}
+## $3 --branch
+## $4 --deploy_type
 
-#echo -e "\E[31;40m envokedCmd: $1\n"
-#echo -e "envokedCmd: $1\n"
-
-#change dir to ::: cd <path_2_app_name>
+##change dir to ::: cd <path_2_app_name>
 cd ~/sites/$1
 echo -e "\E[32;40m ok entering to $1 directory. i.e,\n $(pwd)"
 
-#now lets pull the latest changes
-#git pull
+##now lets pull the latest changes
+git pull
 #git checkout -b $3
 
-#execute the deploy command
-#bundle exec cap $2 deploy
+##execute the deploy command
+bundle exec cap $2 deploy
