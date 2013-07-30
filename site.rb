@@ -11,16 +11,15 @@ get '/hello/:name' do
   "Hello #{params[:name]}!"
 end
 
-get '/bash/:name' do |a|
+get '/bash/:name' do
   #a=#{params[:name]}
-  IO.popen("sh #{a}").readlines
+  IO.popen("ls").readlines
 end
 
 get '/deploy/' do
-  puts "hello world...****************************"
+  puts "Hold on, I'm busy deployin'...****************************"
   puts params['app']
   puts params['env']
   puts params['branch']
-  puts params['deploy_type']
-  IO.popen("sh ./script.sh #{params['app']} #{params['env']} #{params['branch']} #{params['deploy_type']}").readlines
+  IO.popen("sh ./script.sh #{params['app']} #{params['env']} #{params['branch']}").readlines
 end
