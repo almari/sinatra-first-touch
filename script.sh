@@ -18,10 +18,10 @@ if [ -d ~/gitTesting/ROR/apps//$1 ]; then
     git checkout master
     git pull
 
-    #branch_name=${3-master}
-    branch_name=${3:-'master'};
-    echo "By default I used $branch_name "
+    branch_name=${3:-'master'}
     git checkout $branch_name
+    echo -e "\e[7mSwitched to $branch_name branch\e[0m"
+
 
     deploy_type='deploy'
     #if [ "$4" = 'setup' ]
@@ -36,9 +36,10 @@ if [ -d ~/gitTesting/ROR/apps//$1 ]; then
 
     bundle exec cap $2 deploy -S branch=$branch_name >>/tmp/deploy.log
     echo '--------------------------------------------------------------------------------------------------------------------------------------' >> /tmp/deploy.log
+    echo "Awesome !! Everything deployed like a bo\$\$"
     exit 1
 
 else
-    echo -e "\e[31m\e[1mSorry BO\$\$, I know nothing about $1\e[0m"
+    echo -e "\e[31m\e[1mSorry BO\$\$, I know nothing about $1\e[0m\n Daal mein kuch kala hai ;)"
 
 fi
