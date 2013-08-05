@@ -23,3 +23,17 @@ get '/deploy/' do
   puts params['branch']
   IO.popen("sh ./script.sh #{params['app']} #{params['env']} #{params['branch']}").readlines
 end
+
+get '/video/' do
+  puts "yo, I am downloading video"
+  puts params['video']
+  IO.popen("cd ../downloads/vidoes/; youtube-dl -t #{params['video_link']}").readlines
+  'Ok...your video has been download'
+end
+
+get '/wget/' do
+   puts params['link']
+   IO.popen("cd ../downloads/files; wget -c #{params['link']} >> /tmp/download.log")
+   'Hurray ! download competed. '
+
+end
