@@ -9,7 +9,7 @@
 
 
 ##change dir and start deployment
-if [ -d ~/gitTesting/ROR/apps//$1 ]; then
+if [ -d ~/gitTesting/ROR/apps/$1 ]; then
     echo -e "\e[32m ok, I found \e[0m\e[37m\e[42m\e[1m$1\e[0m"
     cd ~/gitTesting/ROR/apps/$1
 
