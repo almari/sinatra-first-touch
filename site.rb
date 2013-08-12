@@ -55,7 +55,6 @@ end
 
 # to find the contact list in the csv file
 get '/phone/' do
-
   puts "#{params['no']}"
   IO.popen("sh ./phone.sh '#{params[:no]}'").readlines
 
